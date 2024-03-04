@@ -11,7 +11,7 @@ ECHO_GPIO = 24
 CC_MOTOR_ENABLE = 13
 CC_MOTOR_INPUT_A = 5 # Input 1
 CC_MOTOR_INPUT_B = 6 # Input 2
-SERVO_GPIO = 16
+SERVO_GPIO = 26
 
 def signal_handler(sig, frame):
     global power_on
