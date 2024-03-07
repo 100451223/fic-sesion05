@@ -52,8 +52,8 @@ def set_servomotor_angle(servomotor_object, angle):
     start = 4
     end = 12.5
     ratio = (end - start) / 180
-    # angle_as_percent = angle * ratio
-    angle_as_percent = angle / 180
+    angle_as_percent = angle * ratio
+    # angle_as_percent = angle / 180
     servomotor_object.ChangeDutyCycle(angle_as_percent)
     print("New angle set successfully!")
 
