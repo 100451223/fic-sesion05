@@ -159,7 +159,7 @@ def turn_off_dc_motor():
     GPIO.output(CC_MOTOR_INPUT_B, False)
     GPIO.output(CC_MOTOR_ENABLE, False)
 
-def motor_thread(speed):
+def motor_thread():
     global power_on
     print("Motor thread started")
 
@@ -167,7 +167,7 @@ def motor_thread(speed):
     # Start DC motor
     setup_dc_motor()
     dc_motor_object.start(0)
-    dc_motor_object.ChangeDutyCycle(speed)
+    dc_motor_object.ChangeDutyCycle(0)
     # Start Servomotor
     servomotor_object.start(0)
     set_servomotor_angle(servomotor_object, 90)
@@ -193,12 +193,12 @@ def motor_thread(speed):
     turn_off_dc_motor()
 
 
-def launch_threads(motor_speed):
+def launch_threads():
     print("Launching threads...")
     try:
         th.Thread(target=luminosity_thread, daemon=True).start()
         th.Thread(target=distance_thread, daemon=True).start()
-        th.Thread(target=motor_thread, args=(motor_speed,), daemon=True).start()
+        th.Thread(target=motor_thread, daemon=True).start()
         return 0
     except:
         return -1
@@ -218,7 +218,7 @@ if __name__ == "__main__":
     while True:
         if power_on:
             if not threads_initialized:
-                if(launch_threads(motor_speed=speed) == 0):
+                if(launch_threads() == 0):
                     threads_initialized = True
                 else:
                     print("[ERROR] Something went wrong while initializing the threads")
