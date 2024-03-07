@@ -196,8 +196,8 @@ def motor_thread():
 def launch_threads():
     print("Launching threads...")
     try:
-        th.Thread(target=luminosity_thread, daemon=True).start()
-        th.Thread(target=distance_thread, daemon=True).start()
+        # th.Thread(target=luminosity_thread, daemon=True).start()
+        # th.Thread(target=distance_thread, daemon=True).start()
         th.Thread(target=motor_thread, daemon=True).start()
         return 0
     except:
