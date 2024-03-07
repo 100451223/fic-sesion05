@@ -170,7 +170,7 @@ def motor_thread():
     dc_motor_object.ChangeDutyCycle(0)
     # Start Servomotor
     servomotor_object.start(0)
-    set_servomotor_angle(servomotor_object, 90)
+    set_servomotor_angle(90)
     print("Engine started successfully!")
     command_time = 0
     last_command = None
