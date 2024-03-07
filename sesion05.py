@@ -175,7 +175,7 @@ def motor_thread():
     command_time = 0
     last_command = None
     while power_on:
-        if command_time >= commands[0]["Time"]:
+        if last_command is None or command_time >= last_command["Time"]:
             print("Current command:", commands[0])
             set_servomotor_angle(commands[0]["SteeringAngle"])
             dc_motor_object.ChangeDutyCycle(commands[0]["Speed"])
