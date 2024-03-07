@@ -97,8 +97,8 @@ def launch_threads():
 if __name__ == "__main__":
     power_on = False
     threads_initialized = False
-    servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     setup_devices()
+    servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     
     signal.signal(signal.SIGINT, signal_handler)
 
