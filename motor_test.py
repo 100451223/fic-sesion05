@@ -77,7 +77,7 @@ def servomotor_thread():
         if target_angle is not None:
             set_servomotor_angle(servomotor_object, target_angle)
 
-        time.sleep(5)
+        time.sleep(2)
 
     print("Servomotor thread ended. Resetting servomotor...")
     servomotor_object.ChangeDutyCycle(0)
