@@ -209,7 +209,6 @@ if __name__ == "__main__":
     setup_devices()
     servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     dc_motor_object = GPIO.PWM(CC_MOTOR_ENABLE, 100)
-    speed = ask_for_motor_speed()
     commands = load_commands()
 
     
