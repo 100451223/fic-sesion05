@@ -3,6 +3,7 @@ import signal
 import sys
 import RPi.GPIO as GPIO
 import time, math
+from command_reader import load_commands
 
 BUTTON_GPIO = 16
 LDR_GPIO = 4
@@ -98,6 +99,7 @@ if __name__ == "__main__":
     power_on = False
     threads_initialized = False
     setup_devices()
+    commands = load_commands()
     servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     
     signal.signal(signal.SIGINT, signal_handler)
