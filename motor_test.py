@@ -60,7 +60,6 @@ def set_servomotor_angle(servomotor_object, angle):
 def servomotor_thread():
 
     print("Servomotor thread started")
-    servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     servomotor_object.start(0)
     print("Servomotor object started")
 
@@ -98,7 +97,7 @@ def launch_threads():
 if __name__ == "__main__":
     power_on = False
     threads_initialized = False
-
+    servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     setup_devices()
     
     signal.signal(signal.SIGINT, signal_handler)
