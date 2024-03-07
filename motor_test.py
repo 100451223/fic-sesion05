@@ -53,7 +53,7 @@ def set_servomotor_angle(servomotor_object, angle):
     end = 12.5
     ratio = (end - start) / 180
     angle_as_percent = angle * ratio
-    angle_as_percent = angle / 180 + 2.5
+    # angle_as_percent = angle / 180 + 2.5
     servomotor_object.ChangeDutyCycle(angle_as_percent)
     print("New angle set successfully!")
 
@@ -67,7 +67,7 @@ def servomotor_thread():
     while power_on:
         target_angle = None
         try:
-            target_angle = int(input("Enter the angle: "))
+            target_angle = float(input("Enter the angle: "))
             if target_angle < 0 or target_angle > 180:
                 print("Invalid angle")
                 continue
