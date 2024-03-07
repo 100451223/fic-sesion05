@@ -48,13 +48,13 @@ def button_thread():
 
 def set_servomotor_angle(servomotor_object, angle):
     print("Setting angle to:", angle, "...")
-    # angle = max(0, min(180, angle))
+    angle = max(0, min(180, angle))
     start = 2
     end = 12
     ratio = (end - start) / 180
-    angle_as_percent = angle * ratio + start
+    angle_transformed = angle * ratio + start
     # angle_as_percent = angle / 180 + 2
-    servomotor_object.ChangeDutyCycle(angle_as_percent)
+    servomotor_object.ChangeDutyCycle(angle_transformed)
     print("New angle set successfully!")
 
 def servomotor_thread():
