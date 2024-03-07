@@ -48,7 +48,7 @@ def button_thread():
 
 def set_servomotor_angle(servomotor_object, angle):
     print("Setting angle to:", angle, "...")
-    angle = max(0, min(180, angle))
+    # angle = max(0, min(180, angle))
     start = 4
     end = 12.5
     ratio = (end - start) / 180
@@ -68,9 +68,9 @@ def servomotor_thread():
         target_angle = None
         try:
             target_angle = float(input("Enter the angle: "))
-            if target_angle < 0 or target_angle > 180:
-                print("Invalid angle")
-                continue
+            # if target_angle < 0 or target_angle > 180:
+            #     print("Invalid angle")
+            #     continue
         except:
             print("Invalid input")
             continue
