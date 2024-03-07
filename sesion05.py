@@ -206,12 +206,12 @@ def launch_threads(motor_speed):
 if __name__ == "__main__":
     power_on = False
     threads_initialized = False
+    setup_devices()
     servomotor_object = GPIO.PWM(SERVO_GPIO, 50)
     dc_motor_object = GPIO.PWM(CC_MOTOR_ENABLE, 100)
     speed = ask_for_motor_speed()
     commands = load_commands()
 
-    setup_devices()
     
     signal.signal(signal.SIGINT, signal_handler)
 
