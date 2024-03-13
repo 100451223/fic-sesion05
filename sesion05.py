@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 import time
 from command_reader import load_commands
 
-BUTTON_GPIO = 16
+BUTTON_GPIO = 23
 CC_MOTOR_ENABLE = 13
 CC_MOTOR_INPUT_A = 5 # Input 1
 CC_MOTOR_INPUT_B = 6 # Input 2
