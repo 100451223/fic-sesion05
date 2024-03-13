@@ -7,8 +7,8 @@ from command_reader import load_commands
 
 BUTTON_GPIO = 16
 LDR_GPIO = 4
-TRIGGER_GPIO = 23
-ECHO_GPIO = 24
+TRIGGER_GPIO = 24
+ECHO_GPIO = 25
 CC_MOTOR_ENABLE = 13
 CC_MOTOR_INPUT_A = 5 # Input 1
 CC_MOTOR_INPUT_B = 6 # Input 2
