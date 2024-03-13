@@ -98,6 +98,7 @@ def motor_thread():
 
     print("Stopping engine...")
     turn_off_dc_motor()
+    power_on = False
 
 def launch_threads():
     print("Launching threads...")
